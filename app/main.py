@@ -16,13 +16,7 @@ BOOKS = [
 
 @app.get("/")
 async def root():
-    return {
-        "message": "Welcome to the Books API",
-        "endpoints": {
-            "books": "/books",
-            "docs": "/docs"
-        }
-    }
+    return RedirectResponse(url="/books")
 
 
 @app.get("/books", response_class=HTMLResponse)
