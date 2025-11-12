@@ -14,6 +14,17 @@ BOOKS = [
 ]
 
 
+@app.get("/")
+async def root():
+    return {
+        "message": "Welcome to the Books API",
+        "endpoints": {
+            "books": "/books",
+            "docs": "/docs"
+        }
+    }
+
+
 @app.get("/books", response_class=HTMLResponse)
 async def get_books(request: Request):
     return templates.TemplateResponse(
