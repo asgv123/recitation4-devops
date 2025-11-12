@@ -24,6 +24,7 @@ async def root():
         }
     }
 
+
 @app.get("/books", response_class=HTMLResponse)
 async def get_books(request: Request):
     return templates.TemplateResponse(
